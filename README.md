@@ -19,7 +19,7 @@ git clone https://github.com/todbot/qtpy-keys
 cd /Volumes/CIRCUITPY
 cp ~/Downloads/qtpy-keys/code.py .
 rm -rf lib
-unzip -v ~/Downloads/qtpy-keys/qtpy-keys-lib.zip 
+unzip ~/Downloads/qtpy-keys/qtpy-keys-lib.zip 
 ```
 <img src="qtpy-keys-demo.gif"/>
 
