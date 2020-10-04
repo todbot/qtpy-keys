@@ -10,7 +10,8 @@ contains everything needed.
 
 Also on a Mac, copying files generates 4kB "._" meta files that fill up the
 QT Py's disk space quickly.  To prevent this, you need to use the system tool
-`dot_clean` on the unzipped lib directory before copying it to CIRCUITPY/lib
+`dot_clean` to remove these meta files on the unzipped `lib` directory before
+copying it to `CIRCUITPY/lib`.
 
 To install (on Mac):
 
