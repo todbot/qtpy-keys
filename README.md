@@ -8,8 +8,14 @@ The QT Py has minimal flash space so copying full `adafruit_hid` library
 may not work. So the included pre-built `lib` directory zipfile
 contains everything needed.
 
-Also on a Mac, copying files generates 4kB "._" meta files for every
-real file. Unzipping from a zip file prevents this. 
+Also on a Mac, copying files generates 4kB "._" meta files that fill up the
+QT Py's disk space quickly.  To prevent this, you need to set this preference and
+restart the finder:
+```
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+killall Finder
+```
+Then you can unzip this lib.zip.
 
 To install:
 
