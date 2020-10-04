@@ -10,7 +10,7 @@ contains everything needed.
 
 Also on a Mac, copying files generates 4kB "._" meta files that fill up the
 QT Py's disk space quickly.  To prevent this, you need to use the system tool
-`dot_clean` to remove these meta files on the unzipped `lib` directory before
+`xattr -cr` to clear these meta info contained in the`lib` directory before
 copying it to `CIRCUITPY/lib`.
 
 To install (on Mac):
@@ -20,7 +20,7 @@ cd ~/Downloads
 git clone https://github.com/todbot/qtpy-keys
 cd qtpy-keys
 unzip qtpy-keys-lib.zip 
-dot_clean lib
+xattr -cr lib code.py
 cp code.py /Volumes/CIRCUITPY
 cp -r lib /Volumes/CIRCUITPY
 ```
