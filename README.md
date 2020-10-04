@@ -9,24 +9,21 @@ may not work. So the included pre-built `lib` directory zipfile
 contains everything needed.
 
 Also on a Mac, copying files generates 4kB "._" meta files that fill up the
-QT Py's disk space quickly.  To prevent this, you need to set this preference and
-restart the finder:
-```
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-killall Finder
-```
-Then you can unzip this lib.zip.
+QT Py's disk space quickly.  To prevent this, you need to use the system tool
+`dot_clean` on the unzipped lib directory before copying it to CIRCUITPY/lib
 
-To install:
+To install (on Mac):
 
 ```
 cd ~/Downloads
 git clone https://github.com/todbot/qtpy-keys
-cd /Volumes/CIRCUITPY
-cp ~/Downloads/qtpy-keys/code.py .
-rm -rf lib
-unzip ~/Downloads/qtpy-keys/qtpy-keys-lib.zip 
+cd qtpy-keys
+unzip qtpy-keys-lib.zip 
+dot_clean lib
+cp code.py /Volumes/CIRCUITPY
+cp -r lib /Volumes/CIRCUITPY
 ```
+
 <img src="qtpy-keys-demo.gif"/>
 
 
